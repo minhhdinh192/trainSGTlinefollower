@@ -24,39 +24,39 @@ void setup() {
   pinMode(RIGHT_IRS, INPUT);
 }
 void forward() {
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, MAX);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
-  analogWrite(ENB, MAX);
+  analogWrite(IN1, HIGH);
+  analogWrite(IN2, LOW);
+  digitalWrite(ENA, MAX);
+  analogWrite(IN3, HIGH);
+  analogWrite(IN4, LOW);
+  digitalWrite(ENB, MAX);
 }
 
 void left() {
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-  analogWrite(ENA, MAX);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
-  analogWrite(ENB, MAX);
+  analogWrite(IN1, LOW);
+  analogWrite(IN2, HIGH);
+  digitalWrite(ENA, MAX);
+  analogWrite(IN3, HIGH);
+  analogWrite(IN4, LOW);
+  digitalWrite(ENB, MAX);
 }
 
 void right() {
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, MAX);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
-  analogWrite(ENB, MAX);
+  analogWrite(IN1, HIGH);
+  analogWrite(IN2, LOW);
+  digitalWrite(ENA, MAX);
+  analogWrite(IN3, LOW);
+  analogWrite(IN4, HIGH);
+  digitalWrite(ENB, MAX);
 }
 
 void stop() {
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);
-  analogWrite(ENA, MIN);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, LOW);
-  analogWrite(ENB, MIN);
+  analogWrite(IN1, LOW);
+  analogWrite(IN2, LOW);
+  digitalWrite(ENA, MIN);
+  analogWrite(IN3, LOW);
+  analogWrite(IN4, LOW);
+  digitalWrite(ENB, MIN);
 }
 
 void loop() {
