@@ -30,6 +30,7 @@ void forward() {
   analogWrite(IN3, HIGH);
   analogWrite(IN4, LOW);
   digitalWrite(ENB, MAX);
+  Serial.println("Direction: Forward")
 }
 
 void left() {
@@ -39,6 +40,7 @@ void left() {
   analogWrite(IN3, HIGH);
   analogWrite(IN4, LOW);
   digitalWrite(ENB, MAX);
+  Serial.println("Direction: Left")
 }
 
 void right() {
@@ -48,6 +50,7 @@ void right() {
   analogWrite(IN3, LOW);
   analogWrite(IN4, HIGH);
   digitalWrite(ENB, MAX);
+  Serial.println("Direction: Right")
 }
 
 void stop() {
@@ -57,11 +60,14 @@ void stop() {
   analogWrite(IN3, LOW);
   analogWrite(IN4, LOW);
   digitalWrite(ENB, MIN);
+  Serial.println("Direction: Left")
 }
 
 void loop() {
   int LEFTVAL = digitalRead(LEFT_IRS);
   int RIGHTVAL = digitalRead(RIGHT_IRS);
+  Serial.print("Left + Right = ");
+  Serial.print(String(LEFTVAL) + " " + String(RIGHTVAL));
   if ((LEFTVAL == 1) && (RIGHTVAL == 1)) forward();
   else if ((LEFTVAL == 1) && (RIGHTVAL == 0)) left();
   else if (((LEFTVAL == 0) && (RIGHTVAL == 1))) right();
