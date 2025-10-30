@@ -60,14 +60,14 @@ void stop() {
   analogWrite(IN3, LOW);
   analogWrite(IN4, LOW);
   digitalWrite(ENB, MIN);
-  Serial.println("Direction: Left");
+  Serial.println("Direction: Stop");
 }
 
 void loop() {
   int LEFTVAL = digitalRead(LEFT_IRS);
   int RIGHTVAL = digitalRead(RIGHT_IRS);
   Serial.print("Left + Right = ");
-  Serial.print(String(LEFTVAL) + " " + String(RIGHTVAL));
+  Serial.print(String(LEFTVAL) + " " + String(RIGHTVAL) + " ");
   if ((LEFTVAL == 1) && (RIGHTVAL == 1)) forward();
   else if ((LEFTVAL == 1) && (RIGHTVAL == 0)) left();
   else if (((LEFTVAL == 0) && (RIGHTVAL == 1))) right();
